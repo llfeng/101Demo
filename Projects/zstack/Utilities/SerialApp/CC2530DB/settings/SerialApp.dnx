@@ -22,7 +22,7 @@
         <ByteLimit>50</ByteLimit>
     </StackPlugin>
     <DebugChecksum>
-        <Checksum>3387320439</Checksum>
+        <Checksum>2590891161</Checksum>
     </DebugChecksum>
     <InstructionProfiling>
         <Enabled>_ 0</Enabled>
@@ -49,6 +49,15 @@
     <Disassembly>
         <MixedMode>1</MixedMode>
     </Disassembly>
+    <Breakpoints>
+        <Bp0>_ "STD_CODE" "{D:\SRC\DemoPrj\Components\hal\common\hal_drivers.c}.170.1" 0 0 0 0 "" 0 ""</Bp0>
+        <Bp1>_ "STD_CODE" "{D:\SRC\DemoPrj\Components\hal\common\hal_drivers.c}.153.3" 0 0 0 0 "" 0 ""</Bp1>
+        <Count>2</Count>
+    </Breakpoints>
+    <ChipconEmu>
+        <StopTimersOnHalt>0</StopTimersOnHalt>
+        <LeaveTargetRunning>1</LeaveTargetRunning>
+    </ChipconEmu>
     <LogFile>
         <LoggingEnabled>_ 0</LoggingEnabled>
         <LogFile>_ ""</LogFile>
@@ -58,13 +67,6 @@
         <LoggingEnabled>_ 0</LoggingEnabled>
         <LogFile>_ ""</LogFile>
     </TermIOLog>
-    <Breakpoints>
-        <Count>0</Count>
-    </Breakpoints>
-    <ChipconEmu>
-        <StopTimersOnHalt>0</StopTimersOnHalt>
-        <LeaveTargetRunning>1</LeaveTargetRunning>
-    </ChipconEmu>
     <Aliases>
         <A0>_ "D:\PKU\Demo\DemoPrj\Components\mac\low_level\srf04\single_chip\mac_mcu.c" ""</A0>
         <A1>_ "D:\PKU\Demo\DemoPrj\Components\osal\common\OSAL.c" ""</A1>

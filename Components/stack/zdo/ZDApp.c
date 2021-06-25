@@ -1946,10 +1946,10 @@ void ZDO_NetworkFormationConfirmCB( ZStatus_t Status )
   if ( Status == ZSUCCESS )
   {
     // LED on shows Coordinator started
-    HalLedSet ( HAL_LED_3, HAL_LED_MODE_ON );
+    //HalLedSet ( HAL_LED_3, HAL_LED_MODE_ON );
 
     // LED off forgets HOLD_AUTO_START
-    HalLedSet (HAL_LED_4, HAL_LED_MODE_OFF);
+    //HalLedSet (HAL_LED_4, HAL_LED_MODE_OFF);
 
 #if defined ( ZBIT )
     SIM_SetColor(0xd0ffd0);
@@ -1986,9 +1986,9 @@ void ZDO_StartRouterConfirmCB( ZStatus_t Status )
   if ( Status == ZSUCCESS )
   {
     // LED on shows Router started
-    HalLedSet ( HAL_LED_3, HAL_LED_MODE_ON );
+    //HalLedSet ( HAL_LED_3, HAL_LED_MODE_ON );
     // LED off forgets HOLD_AUTO_START
-    HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF);
+    //HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF);
     if ( devState == DEV_HOLD )
     {
       // Began with HOLD_AUTO_START
@@ -2023,9 +2023,9 @@ void ZDO_JoinConfirmCB( uint16 PanId, ZStatus_t Status )
   if ( Status == ZSUCCESS )
   {
     // LED on shows device joined
-    HalLedSet ( HAL_LED_3, HAL_LED_MODE_ON );
+    //HalLedSet ( HAL_LED_3, HAL_LED_MODE_ON );
     // LED off forgets HOLD_AUTO_START
-    HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF);
+    //HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF);
     if ( (devState == DEV_HOLD) )
     {
       // Began with HOLD_AUTO_START

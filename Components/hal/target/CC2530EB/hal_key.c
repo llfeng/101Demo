@@ -146,23 +146,24 @@
 #define HAL_KEY_A_ICTLBIT  BV(0) /* P0IEN - P0.1 enable/disable bit */
 #define HAL_KEY_A_PXIFG    P0IFG /* Interrupt flag at source */
    
+
 /* SW_6 is at P0.1 */
-#define HAL_KEY_A_PORT   P0
-#define HAL_KEY_A_BIT    BV(0)
-#define HAL_KEY_A_SEL    P0SEL
-#define HAL_KEY_A_DIR    P0DIR
+#define HAL_KEY_B_PORT   P0
+#define HAL_KEY_B_BIT    BV(0)
+#define HAL_KEY_B_SEL    P0SEL
+#define HAL_KEY_B_DIR    P0DIR
 
 /* edge interrupt */
-#define HAL_KEY_A_EDGEBIT  BV(0)
-#define HAL_KEY_A_EDGE     HAL_KEY_FALLING_EDGE
+#define HAL_KEY_B_EDGEBIT  BV(0)
+#define HAL_KEY_B_EDGE     HAL_KEY_FALLING_EDGE
 
 
 /* SW_6 interrupts */
-#define HAL_KEY_A_IEN      IEN1  /* CPU interrupt mask register */
-#define HAL_KEY_A_IENBIT   BV(5) /* Mask bit for all of Port_0 */
-#define HAL_KEY_A_ICTL     P0IEN /* Port Interrupt Control register */
-#define HAL_KEY_A_ICTLBIT  BV(0) /* P0IEN - P0.1 enable/disable bit */
-#define HAL_KEY_A_PXIFG    P0IFG /* Interrupt flag at source */   
+#define HAL_KEY_B_IEN      IEN1  /* CPU interrupt mask register */
+#define HAL_KEY_B_IENBIT   BV(5) /* Mask bit for all of Port_0 */
+#define HAL_KEY_B_ICTL     P0IEN /* Port Interrupt Control register */
+#define HAL_KEY_B_ICTLBIT  BV(0) /* P0IEN - P0.1 enable/disable bit */
+#define HAL_KEY_B_PXIFG    P0IFG /* Interrupt flag at source */   
 //modify end
 
 /* Joy stick move at P2.0 */
@@ -240,13 +241,13 @@ void HalKeyInit( void )
 {
   /* Initialize previous key to 0 */
   halKeySavedKeys = 0;
-
+#if 0
   HAL_KEY_SW_6_SEL &= ~(HAL_KEY_SW_6_BIT);    /* Set pin function to GPIO */
   HAL_KEY_SW_6_DIR &= ~(HAL_KEY_SW_6_BIT);    /* Set pin direction to Input */
 
   HAL_KEY_JOY_MOVE_SEL &= ~(HAL_KEY_JOY_MOVE_BIT); /* Set pin function to GPIO */
   HAL_KEY_JOY_MOVE_DIR &= ~(HAL_KEY_JOY_MOVE_BIT); /* Set pin direction to Input */
-
+#endif
 
   /* Initialize callback function */
   pHalKeyProcessFunction  = NULL;

@@ -1,0 +1,1328 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.20.1.5333 for 8051               18/Jun/2021  17:52:29
+# Copyright 2004-2018 IAR Systems AB.
+# PC-locked license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  D:\SRC\DemoPrj\Components\osal\common\OSAL_Timers.c
+#    Command line       =  
+#        -f C:\Users\ADMINI~1\AppData\Local\Temp\EWDCF1.tmp
+#        (D:\SRC\DemoPrj\Components\osal\common\OSAL_Timers.c -D ZIGBEEPRO -D
+#        HAL_UART=TRUE -D SERIAL_APP_PORT=0 -D LCD_SUPPORTED -lC
+#        D:\SRC\DemoPrj\Projects\zstack\Utilities\SerialApp\CC2530DB\CoordinatorEB-Pro\List
+#        -lA
+#        D:\SRC\DemoPrj\Projects\zstack\Utilities\SerialApp\CC2530DB\CoordinatorEB-Pro\List
+#        --diag_suppress Pe001,Pa010 -o
+#        D:\SRC\DemoPrj\Projects\zstack\Utilities\SerialApp\CC2530DB\CoordinatorEB-Pro\Obj
+#        -e --debug --core=plain --dptr=16,1 --data_model=large
+#        --code_model=banked --calling_convention=xdata_reentrant
+#        --place_constants=data_rom --nr_virtual_regs 8 -f
+#        D:\SRC\DemoPrj\Projects\zstack\Utilities\SerialApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+#        -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f
+#        D:\SRC\DemoPrj\Projects\zstack\Utilities\SerialApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg
+#        (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0x1223
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_POLLED=3000
+#        -DNWK_INDIRECT_MSG_TIMEOUT=7 -DMAX_RREQ_ENTRIES=8
+#        -DAPSC_MAX_FRAME_RETRIES=3 -DNWK_MAX_DATA_RETRIES=2
+#        -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9 -DAPS_MAX_GROUPS=16
+#        -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07,
+#        0x09, 0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C,
+#        0x0D}" -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"
+#        -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000
+#        -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+#        -DREJOIN_POLL_RATE=440) -I
+#        D:\SRC\DemoPrj\Projects\zstack\Utilities\SerialApp\CC2530DB\ -I
+#        D:\SRC\DemoPrj\Projects\zstack\Utilities\SerialApp\CC2530DB\..\SOURCE\
+#        -I
+#        D:\SRC\DemoPrj\Projects\zstack\Utilities\SerialApp\CC2530DB\..\..\..\ZMAIN\TI2530DB\
+#        -I
+#        D:\SRC\DemoPrj\Projects\zstack\Utilities\SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\MT\
+#        -I
+#        D:\SRC\DemoPrj\Projects\zstack\Utilities\SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLUDE\
+#        -I
+#        D:\SRC\DemoPrj\Projects\zstack\Utilities\SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\TARGET\CC2530EB\
+#        -I
+#        D:\SRC\DemoPrj\Projects\zstack\Utilities\SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\MCU\CCSOC\
+#        -I
+#        D:\SRC\DemoPrj\Projects\zstack\Utilities\SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\INCLUDE\
+#        -I
+#        D:\SRC\DemoPrj\Projects\zstack\Utilities\SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\AF\
+#        -I
+#        D:\SRC\DemoPrj\Projects\zstack\Utilities\SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\NWK\
+#        -I
+#        D:\SRC\DemoPrj\Projects\zstack\Utilities\SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SEC\
+#        -I
+#        D:\SRC\DemoPrj\Projects\zstack\Utilities\SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SAPI\
+#        -I
+#        D:\SRC\DemoPrj\Projects\zstack\Utilities\SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SYS\
+#        -I
+#        D:\SRC\DemoPrj\Projects\zstack\Utilities\SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ZDO\
+#        -I
+#        D:\SRC\DemoPrj\Projects\zstack\Utilities\SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\F8W\
+#        -I
+#        D:\SRC\DemoPrj\Projects\zstack\Utilities\SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\
+#        -I
+#        D:\SRC\DemoPrj\Projects\zstack\Utilities\SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\SADDR\
+#        -I
+#        D:\SRC\DemoPrj\Projects\zstack\Utilities\SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\SDATA\
+#        -I
+#        D:\SRC\DemoPrj\Projects\zstack\Utilities\SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\INCLUDE\
+#        -I
+#        D:\SRC\DemoPrj\Projects\zstack\Utilities\SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\HIGH_LEVEL\
+#        -I
+#        D:\SRC\DemoPrj\Projects\zstack\Utilities\SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\
+#        -I
+#        D:\SRC\DemoPrj\Projects\zstack\Utilities\SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\SINGLE_CHIP\
+#        -Ohz --require_prototypes)
+#    Locale             =  Chinese (Simplified)_CHN.936
+#    List file          =  
+#        D:\SRC\DemoPrj\Projects\zstack\Utilities\SerialApp\CC2530DB\CoordinatorEB-Pro\List\OSAL_Timers.lst
+#    Object file        =  
+#        D:\SRC\DemoPrj\Projects\zstack\Utilities\SerialApp\CC2530DB\CoordinatorEB-Pro\Obj\OSAL_Timers.r51
+#
+###############################################################################
+
+D:\SRC\DemoPrj\Components\osal\common\OSAL_Timers.c
+      1          /**************************************************************************************************
+      2            Filename:       OSAL_Timers.c
+      3            Revised:        $Date: 2009-02-24 11:20:27 -0800 (Tue, 24 Feb 2009) $
+      4            Revision:       $Revision: 19256 $
+      5          
+      6            Description:    OSAL Timer definition and manipulation functions.
+      7          
+      8          
+      9            Copyright 2004-2009 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          /*********************************************************************
+     41           * INCLUDES
+     42           */
+     43          
+     44          #include "comdef.h"
+     45          #include "OnBoard.h"
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IEN0
+   \                     _A_IEN0:
+   \   000000                DS 1
+     46          #include "OSAL.h"
+     47          #include "OSAL_Timers.h"
+     48          #include "hal_timer.h"
+     49          
+     50          /*********************************************************************
+     51           * MACROS
+     52           */
+     53          
+     54          /*********************************************************************
+     55           * CONSTANTS
+     56           */
+     57          
+     58          /*********************************************************************
+     59           * TYPEDEFS
+     60           */
+     61          
+     62          typedef struct
+     63          {
+     64            void *next;
+     65            uint16 timeout;
+     66            uint16 event_flag;
+     67            uint8 task_id;
+     68          } osalTimerRec_t;
+     69          
+     70          /*********************************************************************
+     71           * GLOBAL VARIABLES
+     72           */
+     73          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     74          osalTimerRec_t *timerHead;
+   \                     timerHead:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     75          
+     76          /*********************************************************************
+     77           * EXTERNAL VARIABLES
+     78           */
+     79          
+     80          /*********************************************************************
+     81           * EXTERNAL FUNCTIONS
+     82           */
+     83          
+     84          /*********************************************************************
+     85           * LOCAL VARIABLES
+     86           */
+     87          // Milliseconds since last reboot
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     88          static uint32 osal_systemClock;
+   \                     osal_systemClock:
+   \   000000                DS 4
+   \   000004                REQUIRE __INIT_XDATA_Z
+     89          
+     90          /*********************************************************************
+     91           * LOCAL FUNCTION PROTOTYPES
+     92           */
+     93          osalTimerRec_t  *osalAddTimer( uint8 task_id, uint16 event_flag, uint16 timeout );
+     94          osalTimerRec_t *osalFindTimer( uint8 task_id, uint16 event_flag );
+     95          void osalDeleteTimer( osalTimerRec_t *rmTimer );
+     96          
+     97          /*********************************************************************
+     98           * FUNCTIONS
+     99           *********************************************************************/
+    100          
+    101          /*********************************************************************
+    102           * @fn      osalTimerInit
+    103           *
+    104           * @brief   Initialization for the OSAL Timer System.
+    105           *
+    106           * @param   none
+    107           *
+    108           * @return
+    109           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    110          void osalTimerInit( void )
+   \                     osalTimerInit:
+    111          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    112            osal_systemClock = 0;
+   \   000004   90....       MOV       DPTR,#osal_systemClock
+   \   000007   E4           CLR       A
+   \   000008   F0           MOVX      @DPTR,A
+   \   000009   A3           INC       DPTR
+   \   00000A   F0           MOVX      @DPTR,A
+   \   00000B   A3           INC       DPTR
+   \   00000C   F0           MOVX      @DPTR,A
+   \   00000D   A3           INC       DPTR
+   \   00000E   F0           MOVX      @DPTR,A
+    113          }
+   \   00000F   02....       LJMP      ?Subroutine0 & 0xFFFF
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   D083         POP       DPH
+   \   000002   D082         POP       DPL
+   \   000004   02....       LJMP      ?BRET
+    114          
+    115          /*********************************************************************
+    116           * @fn      osalAddTimer
+    117           *
+    118           * @brief   Add a timer to the timer list.
+    119           *          Ints must be disabled.
+    120           *
+    121           * @param   task_id
+    122           * @param   event_flag
+    123           * @param   timeout
+    124           *
+    125           * @return  osalTimerRec_t * - pointer to newly created timer
+    126           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    127          osalTimerRec_t * osalAddTimer( uint8 task_id, uint16 event_flag, uint16 timeout )
+   \                     osalAddTimer:
+    128          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000   74F2         MOV       A,#-0xe
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV       ?V2,R1
+   \   000007   8A..         MOV       ?V0,R2
+   \   000009   8B..         MOV       ?V1,R3
+   \   00000B   EC           MOV       A,R4
+   \   00000C   FE           MOV       R6,A
+   \   00000D   ED           MOV       A,R5
+   \   00000E   FF           MOV       R7,A
+    129            osalTimerRec_t *newTimer;
+    130            osalTimerRec_t *srchTimer;
+    131          
+    132            // Look for an existing timer first
+    133            newTimer = osalFindTimer( task_id, event_flag );
+   \   00000F                ; Setup parameters for call to function osalFindTimer
+   \   00000F   12....       LCALL     `??osalFindTimer::?relay`; Banked call to: osalFindTimer
+    134            if ( newTimer )
+   \   000012   EA           MOV       A,R2
+   \   000013   4B           ORL       A,R3
+   \   000014   600C         JZ        ??osalAddTimer_0
+    135            {
+    136              // Timer is found - update it.
+    137              newTimer->timeout = timeout;
+   \   000016   8A82         MOV       DPL,R2
+   \   000018   8B83         MOV       DPH,R3
+   \   00001A   A3           INC       DPTR
+   \   00001B   A3           INC       DPTR
+   \   00001C   EE           MOV       A,R6
+   \   00001D   F0           MOVX      @DPTR,A
+   \   00001E   A3           INC       DPTR
+   \   00001F   EF           MOV       A,R7
+   \   000020   805D         SJMP      ??osalAddTimer_1
+    138          
+    139              return ( newTimer );
+    140            }
+    141            else
+    142            {
+    143              // New Timer
+    144              newTimer = osal_mem_alloc( sizeof( osalTimerRec_t ) );
+   \                     ??osalAddTimer_0:
+   \   000022                ; Setup parameters for call to function osal_mem_alloc
+   \   000022   7A07         MOV       R2,#0x7
+   \   000024   7B00         MOV       R3,#0x0
+   \   000026   12....       LCALL     `??osal_mem_alloc::?relay`; Banked call to: osal_mem_alloc
+    145          
+    146              if ( newTimer )
+   \   000029   EA           MOV       A,R2
+   \   00002A   4B           ORL       A,R3
+   \   00002B   6055         JZ        ??osalAddTimer_2
+    147              {
+    148                // Fill in new timer
+    149                newTimer->task_id = task_id;
+   \   00002D   8A82         MOV       DPL,R2
+   \   00002F   8B83         MOV       DPH,R3
+   \   000031   A3           INC       DPTR
+   \   000032   A3           INC       DPTR
+   \   000033   A3           INC       DPTR
+   \   000034   A3           INC       DPTR
+   \   000035   A3           INC       DPTR
+   \   000036   A3           INC       DPTR
+   \   000037   E5..         MOV       A,?V2
+   \   000039   F0           MOVX      @DPTR,A
+    150                newTimer->event_flag = event_flag;
+   \   00003A   8A82         MOV       DPL,R2
+   \   00003C   8B83         MOV       DPH,R3
+   \   00003E   A3           INC       DPTR
+   \   00003F   A3           INC       DPTR
+   \   000040   A3           INC       DPTR
+   \   000041   A3           INC       DPTR
+   \   000042   E5..         MOV       A,?V0
+   \   000044   F0           MOVX      @DPTR,A
+   \   000045   A3           INC       DPTR
+   \   000046   E5..         MOV       A,?V1
+   \   000048   F0           MOVX      @DPTR,A
+    151                newTimer->timeout = timeout;
+   \   000049   8A82         MOV       DPL,R2
+   \   00004B   8B83         MOV       DPH,R3
+   \   00004D   A3           INC       DPTR
+   \   00004E   A3           INC       DPTR
+   \   00004F   EE           MOV       A,R6
+   \   000050   F0           MOVX      @DPTR,A
+   \   000051   A3           INC       DPTR
+   \   000052   EF           MOV       A,R7
+   \   000053   F0           MOVX      @DPTR,A
+    152                newTimer->next = (void *)NULL;
+   \   000054   8A82         MOV       DPL,R2
+   \   000056   8B83         MOV       DPH,R3
+   \   000058   E4           CLR       A
+   \   000059   F0           MOVX      @DPTR,A
+   \   00005A   A3           INC       DPTR
+   \   00005B   F0           MOVX      @DPTR,A
+    153          
+    154                // Does the timer list already exist
+    155                if ( timerHead == NULL )
+   \   00005C   12....       LCALL     ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   00005F   90....       MOV       DPTR,#timerHead
+   \   000062   6017         JZ        ??osalAddTimer_3
+    156                {
+    157                  // Start task list
+    158                  timerHead = newTimer;
+    159                }
+    160                else
+    161                {
+    162                  // Add it to the end of the timer list
+    163                  srchTimer = timerHead;
+   \   000064   E0           MOVX      A,@DPTR
+   \   000065   FC           MOV       R4,A
+   \   000066   A3           INC       DPTR
+   \   000067   E0           MOVX      A,@DPTR
+   \   000068   8003         SJMP      ??osalAddTimer_4
+    164          
+    165                  // Stop at the last record
+    166                  while ( srchTimer->next )
+    167                    srchTimer = srchTimer->next;
+   \                     ??osalAddTimer_5:
+   \   00006A   E8           MOV       A,R0
+   \   00006B   FC           MOV       R4,A
+   \   00006C   E9           MOV       A,R1
+   \                     ??osalAddTimer_4:
+   \   00006D   FD           MOV       R5,A
+   \   00006E   8C82         MOV       DPL,R4
+   \   000070   8D83         MOV       DPH,R5
+   \   000072   12....       LCALL     ??Subroutine4_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   000075   70F3         JNZ       ??osalAddTimer_5
+    168          
+    169                  // Add to the list
+    170                  srchTimer->next = newTimer;
+   \   000077   8C82         MOV       DPL,R4
+   \   000079   8D83         MOV       DPH,R5
+   \                     ??osalAddTimer_3:
+   \   00007B   EA           MOV       A,R2
+   \   00007C   F0           MOVX      @DPTR,A
+   \   00007D   A3           INC       DPTR
+   \   00007E   EB           MOV       A,R3
+   \                     ??osalAddTimer_1:
+   \   00007F   F0           MOVX      @DPTR,A
+    171                }
+    172          
+    173                return ( newTimer );
+   \   000080   8004         SJMP      ??osalAddTimer_6
+    174              }
+    175              else
+    176                return ( (osalTimerRec_t *)NULL );
+   \                     ??osalAddTimer_2:
+   \   000082   7A00         MOV       R2,#0x0
+   \   000084   7B00         MOV       R3,#0x0
+    177            }
+   \                     ??osalAddTimer_6:
+   \   000086                REQUIRE ?Subroutine1
+   \   000086                ; // Fall through to label ?Subroutine1
+    178          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   7F06         MOV       R7,#0x6
+   \   000002   02....       LJMP      ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   90....       MOV       DPTR,#timerHead
+   \   000003                REQUIRE ??Subroutine4_0
+   \   000003                ; // Fall through to label ??Subroutine4_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine4_0:
+   \   000000   E0           MOVX      A,@DPTR
+   \   000001   F8           MOV       R0,A
+   \   000002   A3           INC       DPTR
+   \   000003   E0           MOVX      A,@DPTR
+   \   000004   F9           MOV       R1,A
+   \   000005   E8           MOV       A,R0
+   \   000006   49           ORL       A,R1
+   \   000007   22           RET
+    179          
+    180          /*********************************************************************
+    181           * @fn      osalFindTimer
+    182           *
+    183           * @brief   Find a timer in a timer list.
+    184           *          Ints must be disabled.
+    185           *
+    186           * @param   task_id
+    187           * @param   event_flag
+    188           *
+    189           * @return  osalTimerRec_t *
+    190           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    191          osalTimerRec_t *osalFindTimer( uint8 task_id, uint16 event_flag )
+   \                     osalFindTimer:
+    192          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    193            osalTimerRec_t *srchTimer;
+    194          
+    195            // Head of the timer list
+    196            srchTimer = timerHead;
+   \   000004   90....       MOV       DPTR,#timerHead
+   \   000007   8004         SJMP      ??osalFindTimer_0
+    197          
+    198            // Stop when found or at the end
+    199            while ( srchTimer )
+    200            {
+    201              if ( srchTimer->event_flag == event_flag &&
+    202                   srchTimer->task_id == task_id )
+    203                break;
+    204          
+    205              // Not this one, check another
+    206              srchTimer = srchTimer->next;
+   \                     ??osalFindTimer_1:
+   \   000009   8C82         MOV       DPL,R4
+   \   00000B   8D83         MOV       DPH,R5
+   \                     ??osalFindTimer_0:
+   \   00000D   E0           MOVX      A,@DPTR
+   \   00000E   FC           MOV       R4,A
+   \   00000F   A3           INC       DPTR
+   \   000010   E0           MOVX      A,@DPTR
+   \   000011   FD           MOV       R5,A
+   \   000012   EC           MOV       A,R4
+   \   000013   4D           ORL       A,R5
+   \   000014   601F         JZ        ??osalFindTimer_2
+   \   000016   8C82         MOV       DPL,R4
+   \   000018   8D83         MOV       DPH,R5
+   \   00001A   A3           INC       DPTR
+   \   00001B   A3           INC       DPTR
+   \   00001C   A3           INC       DPTR
+   \   00001D   A3           INC       DPTR
+   \   00001E   E0           MOVX      A,@DPTR
+   \   00001F   6A           XRL       A,R2
+   \   000020   7003         JNZ       ??osalFindTimer_3
+   \   000022   A3           INC       DPTR
+   \   000023   E0           MOVX      A,@DPTR
+   \   000024   6B           XRL       A,R3
+   \                     ??osalFindTimer_3:
+   \   000025   70E2         JNZ       ??osalFindTimer_1
+   \   000027   8C82         MOV       DPL,R4
+   \   000029   8D83         MOV       DPH,R5
+   \   00002B   A3           INC       DPTR
+   \   00002C   A3           INC       DPTR
+   \   00002D   A3           INC       DPTR
+   \   00002E   A3           INC       DPTR
+   \   00002F   A3           INC       DPTR
+   \   000030   A3           INC       DPTR
+   \   000031   E0           MOVX      A,@DPTR
+   \   000032   69           XRL       A,R1
+   \   000033   70D4         JNZ       ??osalFindTimer_1
+    207            }
+    208          
+    209            return ( srchTimer );
+   \                     ??osalFindTimer_2:
+   \   000035   EC           MOV       A,R4
+   \   000036   FA           MOV       R2,A
+   \   000037   ED           MOV       A,R5
+   \   000038   FB           MOV       R3,A
+   \   000039   80..         SJMP      ?Subroutine0
+    210          }
+    211          
+    212          /*********************************************************************
+    213           * @fn      osalDeleteTimer
+    214           *
+    215           * @brief   Delete a timer from a timer list.
+    216           *
+    217           * @param   table
+    218           * @param   rmTimer
+    219           *
+    220           * @return  none
+    221           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    222          void osalDeleteTimer( osalTimerRec_t *rmTimer )
+   \                     osalDeleteTimer:
+    223          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    224            // Does the timer list really exist
+    225            if ( rmTimer )
+   \   000004   EA           MOV       A,R2
+   \   000005   4B           ORL       A,R3
+   \   000006   600C         JZ        ??osalDeleteTimer_0
+    226            {
+    227              // Clear the event flag and osalTimerUpdate() will delete 
+    228              // the timer from the list.
+    229              rmTimer->event_flag = 0;
+   \   000008   8A82         MOV       DPL,R2
+   \   00000A   8B83         MOV       DPH,R3
+   \   00000C   A3           INC       DPTR
+   \   00000D   A3           INC       DPTR
+   \   00000E   A3           INC       DPTR
+   \   00000F   A3           INC       DPTR
+   \   000010   E4           CLR       A
+   \   000011   F0           MOVX      @DPTR,A
+   \   000012   A3           INC       DPTR
+   \   000013   F0           MOVX      @DPTR,A
+    230            }
+    231          }
+   \                     ??osalDeleteTimer_0:
+   \   000014                REQUIRE ?Subroutine0
+   \   000014                ; // Fall through to label ?Subroutine0
+    232          
+    233          /*********************************************************************
+    234           * @fn      osal_start_timerEx
+    235           *
+    236           * @brief
+    237           *
+    238           *   This function is called to start a timer to expire in n mSecs.
+    239           *   When the timer expires, the calling task will get the specified event.
+    240           *
+    241           * @param   uint8 taskID - task id to set timer for
+    242           * @param   uint16 event_id - event to be notified with
+    243           * @param   UNINT16 timeout_value - in milliseconds.
+    244           *
+    245           * @return  SUCCESS, or NO_TIMER_AVAIL.
+    246           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    247          uint8 osal_start_timerEx( uint8 taskID, uint16 event_id, uint16 timeout_value )
+   \                     osal_start_timerEx:
+    248          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F6         MOV       A,#-0xa
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    249            halIntState_t intState;
+    250            osalTimerRec_t *newTimer;
+    251          
+    252            HAL_ENTER_CRITICAL_SECTION( intState );  // Hold off interrupts.
+   \   000005   AEA8         MOV       R6,0xa8+0x0
+   \   000007   C2AF         CLR       0xa8.7
+    253          
+    254            // Add timer
+    255            newTimer = osalAddTimer( taskID, event_id, timeout_value );
+   \   000009                ; Setup parameters for call to function osalAddTimer
+   \   000009   12....       LCALL     `??osalAddTimer::?relay`; Banked call to: osalAddTimer
+   \   00000C   8B..         MOV       ?V1,R3
+   \   00000E   A9..         MOV       R1,?V1
+    256          
+    257            HAL_EXIT_CRITICAL_SECTION( intState );   // Re-enable interrupts.
+   \   000010   EE           MOV       A,R6
+   \   000011   A2E7         MOV       C,0xE0 /* A   */.7
+   \   000013   92AF         MOV       0xa8.7,C
+    258          
+    259            return ( (newTimer != NULL) ? SUCCESS : NO_TIMER_AVAIL );
+   \   000015   EA           MOV       A,R2
+   \   000016   49           ORL       A,R1
+   \   000017   6004         JZ        ??osal_start_timerEx_0
+   \   000019   7900         MOV       R1,#0x0
+   \   00001B   8002         SJMP      ??osal_start_timerEx_1
+   \                     ??osal_start_timerEx_0:
+   \   00001D   7908         MOV       R1,#0x8
+   \                     ??osal_start_timerEx_1:
+   \   00001F   7F02         MOV       R7,#0x2
+   \   000021   02....       LJMP      ?BANKED_LEAVE_XDATA
+   \   000024                REQUIRE _A_IEN0
+    260          }
+    261          
+    262          /*********************************************************************
+    263           * @fn      osal_stop_timerEx
+    264           *
+    265           * @brief
+    266           *
+    267           *   This function is called to stop a timer that has already been started.
+    268           *   If ZSUCCESS, the function will cancel the timer and prevent the event
+    269           *   associated with the timer from being set for the calling task.
+    270           *
+    271           * @param   uint8 task_id - task id of timer to stop
+    272           * @param   uint16 event_id - identifier of the timer that is to be stopped
+    273           *
+    274           * @return  SUCCESS or INVALID_EVENT_ID
+    275           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    276          uint8 osal_stop_timerEx( uint8 task_id, uint16 event_id )
+   \                     osal_stop_timerEx:
+    277          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000   74F4         MOV       A,#-0xc
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+    278            halIntState_t intState;
+    279            osalTimerRec_t *foundTimer;
+    280          
+    281            HAL_ENTER_CRITICAL_SECTION( intState );  // Hold off interrupts.
+   \   000005   A2AF         MOV       C,0xa8.7
+   \   000007   E4           CLR       A
+   \   000008   33           RLC       A
+   \   000009   F5..         MOV       ?V0,A
+   \   00000B   C2AF         CLR       0xa8.7
+    282          
+    283            // Find the timer to stop
+    284            foundTimer = osalFindTimer( task_id, event_id );
+   \   00000D                ; Setup parameters for call to function osalFindTimer
+   \   00000D   12....       LCALL     `??osalFindTimer::?relay`; Banked call to: osalFindTimer
+   \   000010   8A..         MOV       ?V2,R2
+   \   000012   8B..         MOV       ?V3,R3
+   \   000014   AF..         MOV       R7,?V3
+    285            if ( foundTimer )
+   \   000016   EA           MOV       A,R2
+   \   000017   4F           ORL       A,R7
+   \   000018   6003         JZ        ??osal_stop_timerEx_0
+    286            {
+    287              osalDeleteTimer( foundTimer );
+   \   00001A                ; Setup parameters for call to function osalDeleteTimer
+   \   00001A   12....       LCALL     `??osalDeleteTimer::?relay`; Banked call to: osalDeleteTimer
+    288            }
+    289          
+    290            HAL_EXIT_CRITICAL_SECTION( intState );   // Re-enable interrupts.
+   \                     ??osal_stop_timerEx_0:
+   \   00001D   E5..         MOV       A,?V0
+   \   00001F   A2E0         MOV       C,0xE0 /* A   */.0
+   \   000021   92AF         MOV       0xa8.7,C
+    291          
+    292            return ( (foundTimer != NULL) ? SUCCESS : INVALID_EVENT_ID );
+   \   000023   E5..         MOV       A,?V2
+   \   000025   4F           ORL       A,R7
+   \   000026   6004         JZ        ??osal_stop_timerEx_1
+   \   000028   7900         MOV       R1,#0x0
+   \   00002A   8002         SJMP      ??osal_stop_timerEx_2
+   \                     ??osal_stop_timerEx_1:
+   \   00002C   7906         MOV       R1,#0x6
+   \                     ??osal_stop_timerEx_2:
+   \   00002E                REQUIRE ?Subroutine2
+   \   00002E                REQUIRE _A_IEN0
+   \   00002E                ; // Fall through to label ?Subroutine2
+    293          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   7F04         MOV       R7,#0x4
+   \   000002   02....       LJMP      ?BANKED_LEAVE_XDATA
+    294          
+    295          /*********************************************************************
+    296           * @fn      osal_get_timeoutEx
+    297           *
+    298           * @brief
+    299           *
+    300           * @param   uint8 task_id - task id of timer to check
+    301           * @param   uint16 event_id - identifier of timer to be checked
+    302           *
+    303           * @return  Return the timer's tick count if found, zero otherwise.
+    304           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    305          uint16 osal_get_timeoutEx( uint8 task_id, uint16 event_id )
+   \                     osal_get_timeoutEx:
+    306          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000   74F4         MOV       A,#-0xc
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+    307            halIntState_t intState;
+    308            uint16 rtrn = 0;
+   \   000005   7E00         MOV       R6,#0x0
+   \   000007   7F00         MOV       R7,#0x0
+    309            osalTimerRec_t *tmr;
+    310          
+    311            HAL_ENTER_CRITICAL_SECTION( intState );  // Hold off interrupts.
+   \   000009   A2AF         MOV       C,0xa8.7
+   \   00000B   E4           CLR       A
+   \   00000C   33           RLC       A
+   \   00000D   F5..         MOV       ?V0,A
+   \   00000F   C2AF         CLR       0xa8.7
+    312          
+    313            tmr = osalFindTimer( task_id, event_id );
+   \   000011                ; Setup parameters for call to function osalFindTimer
+   \   000011   12....       LCALL     `??osalFindTimer::?relay`; Banked call to: osalFindTimer
+   \   000014   8A82         MOV       DPL,R2
+   \   000016   8B83         MOV       DPH,R3
+    314          
+    315            if ( tmr )
+   \   000018   E582         MOV       A,DPL
+   \   00001A   4583         ORL       A,DPH
+   \   00001C   6007         JZ        ??osal_get_timeoutEx_0
+    316            {
+    317              rtrn = tmr->timeout;
+   \   00001E   A3           INC       DPTR
+   \   00001F   A3           INC       DPTR
+   \   000020   E0           MOVX      A,@DPTR
+   \   000021   FE           MOV       R6,A
+   \   000022   A3           INC       DPTR
+   \   000023   E0           MOVX      A,@DPTR
+   \   000024   FF           MOV       R7,A
+    318            }
+    319          
+    320            HAL_EXIT_CRITICAL_SECTION( intState );   // Re-enable interrupts.
+   \                     ??osal_get_timeoutEx_0:
+   \   000025   E5..         MOV       A,?V0
+   \   000027   A2E0         MOV       C,0xE0 /* A   */.0
+   \   000029   92AF         MOV       0xa8.7,C
+    321          
+    322            return rtrn;
+   \   00002B   EE           MOV       A,R6
+   \   00002C   FA           MOV       R2,A
+   \   00002D   EF           MOV       A,R7
+   \   00002E   FB           MOV       R3,A
+   \   00002F   80..         SJMP      ?Subroutine2
+   \   000031                REQUIRE _A_IEN0
+    323          }
+    324          
+    325          /*********************************************************************
+    326           * @fn      osal_timer_num_active
+    327           *
+    328           * @brief
+    329           *
+    330           *   This function counts the number of active timers.
+    331           *
+    332           * @return  uint8 - number of timers
+    333           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    334          uint8 osal_timer_num_active( void )
+   \                     osal_timer_num_active:
+    335          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    336            halIntState_t intState;
+    337            uint8 num_timers = 0;
+   \   000004   7900         MOV       R1,#0x0
+    338            osalTimerRec_t *srchTimer;
+    339          
+    340            HAL_ENTER_CRITICAL_SECTION( intState );  // Hold off interrupts.
+   \   000006   A2AF         MOV       C,0xa8.7
+   \   000008   E4           CLR       A
+   \   000009   33           RLC       A
+   \   00000A   F8           MOV       R0,A
+   \   00000B   C2AF         CLR       0xa8.7
+    341          
+    342            // Head of the timer list
+    343            srchTimer = timerHead;
+   \   00000D   90....       MOV       DPTR,#timerHead
+   \   000010   8001         SJMP      ??osal_timer_num_active_0
+    344          
+    345            // Count timers in the list
+    346            while ( srchTimer != NULL )
+    347            {
+    348              num_timers++;
+   \                     ??osal_timer_num_active_1:
+   \   000012   09           INC       R1
+    349              srchTimer = srchTimer->next;
+   \                     ??osal_timer_num_active_0:
+   \   000013   E0           MOVX      A,@DPTR
+   \   000014   FA           MOV       R2,A
+   \   000015   A3           INC       DPTR
+   \   000016   E0           MOVX      A,@DPTR
+   \   000017   8A82         MOV       DPL,R2
+   \   000019   F583         MOV       DPH,A
+    350            }
+   \   00001B   E582         MOV       A,DPL
+   \   00001D   4583         ORL       A,DPH
+   \   00001F   70F1         JNZ       ??osal_timer_num_active_1
+    351          
+    352            HAL_EXIT_CRITICAL_SECTION( intState );   // Re-enable interrupts.
+   \   000021   E8           MOV       A,R0
+   \   000022   A2E0         MOV       C,0xE0 /* A   */.0
+   \   000024   92AF         MOV       0xa8.7,C
+    353          
+    354            return num_timers;
+   \   000026   02....       LJMP      ?Subroutine0 & 0xFFFF
+   \   000029                REQUIRE _A_IEN0
+    355          }
+    356          
+    357          /*********************************************************************
+    358           * @fn      osalTimerUpdate
+    359           *
+    360           * @brief   Update the timer structures for a timer tick.
+    361           *
+    362           * @param   none
+    363           *
+    364           * @return  none
+    365           *********************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    366          void osalTimerUpdate( uint16 updateTime )
+   \                     osalTimerUpdate:
+    367          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000   74F2         MOV       A,#-0xe
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV       A,R2
+   \   000006   FE           MOV       R6,A
+   \   000007   EB           MOV       A,R3
+   \   000008   FF           MOV       R7,A
+    368            halIntState_t intState;
+    369            osalTimerRec_t *srchTimer;
+    370            osalTimerRec_t *prevTimer;
+    371          
+    372            HAL_ENTER_CRITICAL_SECTION( intState );  // Hold off interrupts.
+   \   000009   A9A8         MOV       R1,0xa8+0x0
+   \   00000B   C2AF         CLR       0xa8.7
+    373            // Update the system time
+    374            osal_systemClock += updateTime;
+   \   00000D   8A..         MOV       ?V0,R2
+   \   00000F   F5..         MOV       ?V1,A
+   \   000011   E4           CLR       A
+   \   000012   F5..         MOV       ?V2,A
+   \   000014   F5..         MOV       ?V3,A
+   \   000016   90....       MOV       DPTR,#osal_systemClock
+   \   000019   78..         MOV       R0,#?V0
+   \   00001B   12....       LCALL     ?L_ADD_TO_X
+    375            HAL_EXIT_CRITICAL_SECTION( intState );   // Re-enable interrupts.
+   \   00001E   E9           MOV       A,R1
+   \   00001F   A2E7         MOV       C,0xE0 /* A   */.7
+   \   000021   92AF         MOV       0xa8.7,C
+    376          
+    377            // Look for open timer slot
+    378            if ( timerHead != NULL )
+   \   000023   12....       LCALL     ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_5:
+   \   000026   7003         JNZ       $+5
+   \   000028   02....       LJMP      ??osalTimerUpdate_0 & 0xFFFF
+    379            {
+    380              // Add it to the end of the timer list
+    381              srchTimer = timerHead;
+   \   00002B   90....       MOV       DPTR,#timerHead
+   \   00002E   E0           MOVX      A,@DPTR
+   \   00002F   F5..         MOV       ?V0,A
+   \   000031   A3           INC       DPTR
+   \   000032   E0           MOVX      A,@DPTR
+   \   000033   F5..         MOV       ?V1,A
+    382              prevTimer = (void *)NULL;
+   \   000035   75..00       MOV       ?V4,#0x0
+   \   000038   75..00       MOV       ?V5,#0x0
+    383          
+    384              // Look for open timer slot
+    385              while ( srchTimer )
+    386              {
+    387                osalTimerRec_t *freeTimer = NULL;
+   \                     ??osalTimerUpdate_1:
+   \   00003B   75..00       MOV       ?V2,#0x0
+   \   00003E   75..00       MOV       ?V3,#0x0
+    388               
+    389                HAL_ENTER_CRITICAL_SECTION( intState );  // Hold off interrupts.
+   \   000041   A2AF         MOV       C,0xa8.7
+   \   000043   E4           CLR       A
+   \   000044   33           RLC       A
+   \   000045   FA           MOV       R2,A
+   \   000046   C2AF         CLR       0xa8.7
+    390                
+    391                if (srchTimer->timeout <= updateTime)
+   \   000048   E5..         MOV       A,?V0
+   \   00004A   2402         ADD       A,#0x2
+   \   00004C   F8           MOV       R0,A
+   \   00004D   E4           CLR       A
+   \   00004E   35..         ADDC      A,?V1
+   \   000050   F9           MOV       R1,A
+   \   000051   8882         MOV       DPL,R0
+   \   000053   F583         MOV       DPH,A
+   \   000055   E0           MOVX      A,@DPTR
+   \   000056   FC           MOV       R4,A
+   \   000057   A3           INC       DPTR
+   \   000058   E0           MOVX      A,@DPTR
+   \   000059   FD           MOV       R5,A
+   \   00005A   C3           CLR       C
+   \   00005B   EE           MOV       A,R6
+   \   00005C   9C           SUBB      A,R4
+   \   00005D   EF           MOV       A,R7
+   \   00005E   9D           SUBB      A,R5
+   \   00005F   8882         MOV       DPL,R0
+   \   000061   8983         MOV       DPH,R1
+   \   000063   4006         JC        ??osalTimerUpdate_2
+    392                {
+    393                  srchTimer->timeout = 0;
+   \   000065   E4           CLR       A
+   \   000066   F0           MOVX      @DPTR,A
+   \   000067   A3           INC       DPTR
+   \   000068   F0           MOVX      @DPTR,A
+   \   000069   8020         SJMP      ??osalTimerUpdate_3
+    394                }
+    395                else
+    396                {
+    397                  srchTimer->timeout = srchTimer->timeout - updateTime;
+   \                     ??osalTimerUpdate_2:
+   \   00006B   C3           CLR       C
+   \   00006C   E0           MOVX      A,@DPTR
+   \   00006D   9E           SUBB      A,R6
+   \   00006E   F0           MOVX      @DPTR,A
+   \   00006F   A3           INC       DPTR
+   \   000070   E0           MOVX      A,@DPTR
+   \   000071   9F           SUBB      A,R7
+   \   000072   F0           MOVX      @DPTR,A
+    398                }
+    399                
+    400                // When timeout or delete (event_flag == 0)
+    401                if ( srchTimer->timeout == 0 || srchTimer->event_flag == 0 )
+   \   000073   8882         MOV       DPL,R0
+   \   000075   8983         MOV       DPH,R1
+   \   000077   12....       LCALL     ??Subroutine4_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   00007A   600F         JZ        ??osalTimerUpdate_3
+   \   00007C   85..82       MOV       DPL,?V0
+   \   00007F   85..83       MOV       DPH,?V1
+   \   000082   A3           INC       DPTR
+   \   000083   A3           INC       DPTR
+   \   000084   A3           INC       DPTR
+   \   000085   A3           INC       DPTR
+   \   000086   12....       LCALL     ??Subroutine4_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_2:
+   \   000089   7029         JNZ       ??osalTimerUpdate_4
+    402                {
+    403                  // Take out of list
+    404                  if ( prevTimer == NULL )
+   \                     ??osalTimerUpdate_3:
+   \   00008B   85..82       MOV       DPL,?V0
+   \   00008E   85..83       MOV       DPH,?V1
+   \   000091   E0           MOVX      A,@DPTR
+   \   000092   F8           MOV       R0,A
+   \   000093   A3           INC       DPTR
+   \   000094   E0           MOVX      A,@DPTR
+   \   000095   F9           MOV       R1,A
+   \   000096   E5..         MOV       A,?V4
+   \   000098   45..         ORL       A,?V5
+   \   00009A   7005         JNZ       ??osalTimerUpdate_5
+    405                    timerHead = srchTimer->next;
+   \   00009C   90....       MOV       DPTR,#timerHead
+   \   00009F   8006         SJMP      ??osalTimerUpdate_6
+    406                  else
+    407                    prevTimer->next = srchTimer->next;
+   \                     ??osalTimerUpdate_5:
+   \   0000A1   85..82       MOV       DPL,?V4
+   \   0000A4   85..83       MOV       DPH,?V5
+   \                     ??osalTimerUpdate_6:
+   \   0000A7   E8           MOV       A,R0
+   \   0000A8   F0           MOVX      @DPTR,A
+   \   0000A9   A3           INC       DPTR
+   \   0000AA   E9           MOV       A,R1
+   \   0000AB   F0           MOVX      @DPTR,A
+    408          
+    409                  // Setup to free memory
+    410                  freeTimer = srchTimer;
+   \   0000AC   85....       MOV       ?V2,?V0
+   \   0000AF   85....       MOV       ?V3,?V1
+    411          
+    412                  // Next
+    413                  srchTimer = srchTimer->next;
+   \   0000B2   8006         SJMP      ??osalTimerUpdate_7
+    414                }
+    415                else
+    416                {
+    417                  // Get next
+    418                  prevTimer = srchTimer;
+   \                     ??osalTimerUpdate_4:
+   \   0000B4   85....       MOV       ?V4,?V0
+   \   0000B7   85....       MOV       ?V5,?V1
+    419                  srchTimer = srchTimer->next;
+   \                     ??osalTimerUpdate_7:
+   \   0000BA   85..82       MOV       DPL,?V0
+   \   0000BD   85..83       MOV       DPH,?V1
+   \   0000C0   E0           MOVX      A,@DPTR
+   \   0000C1   F5..         MOV       ?V0,A
+   \   0000C3   A3           INC       DPTR
+   \   0000C4   E0           MOVX      A,@DPTR
+   \   0000C5   F5..         MOV       ?V1,A
+    420                }
+    421                
+    422                HAL_EXIT_CRITICAL_SECTION( intState );   // Re-enable interrupts.
+   \   0000C7   EA           MOV       A,R2
+   \   0000C8   A2E0         MOV       C,0xE0 /* A   */.0
+   \   0000CA   92AF         MOV       0xa8.7,C
+    423                
+    424                if ( freeTimer )
+   \   0000CC   E5..         MOV       A,?V2
+   \   0000CE   45..         ORL       A,?V3
+   \   0000D0   6034         JZ        ??osalTimerUpdate_8
+    425                {
+    426                  if ( freeTimer->timeout == 0 )
+   \   0000D2   85..82       MOV       DPL,?V2
+   \   0000D5   85..83       MOV       DPH,?V3
+   \   0000D8   A3           INC       DPTR
+   \   0000D9   A3           INC       DPTR
+   \   0000DA   12....       LCALL     ??Subroutine4_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   0000DD   7020         JNZ       ??osalTimerUpdate_9
+    427                  {
+    428                    osal_set_event( freeTimer->task_id, freeTimer->event_flag );
+   \   0000DF                ; Setup parameters for call to function osal_set_event
+   \   0000DF   85..82       MOV       DPL,?V2
+   \   0000E2   85..83       MOV       DPH,?V3
+   \   0000E5   A3           INC       DPTR
+   \   0000E6   A3           INC       DPTR
+   \   0000E7   A3           INC       DPTR
+   \   0000E8   A3           INC       DPTR
+   \   0000E9   E0           MOVX      A,@DPTR
+   \   0000EA   FA           MOV       R2,A
+   \   0000EB   A3           INC       DPTR
+   \   0000EC   E0           MOVX      A,@DPTR
+   \   0000ED   FB           MOV       R3,A
+   \   0000EE   85..82       MOV       DPL,?V2
+   \   0000F1   85..83       MOV       DPH,?V3
+   \   0000F4   A3           INC       DPTR
+   \   0000F5   A3           INC       DPTR
+   \   0000F6   A3           INC       DPTR
+   \   0000F7   A3           INC       DPTR
+   \   0000F8   A3           INC       DPTR
+   \   0000F9   A3           INC       DPTR
+   \   0000FA   E0           MOVX      A,@DPTR
+   \   0000FB   F9           MOV       R1,A
+   \   0000FC   12....       LCALL     `??osal_set_event::?relay`; Banked call to: osal_set_event
+    429                  }
+    430                  osal_mem_free( freeTimer );
+   \                     ??osalTimerUpdate_9:
+   \   0000FF                ; Setup parameters for call to function osal_mem_free
+   \   0000FF   AA..         MOV       R2,?V2
+   \   000101   AB..         MOV       R3,?V3
+   \   000103   12....       LCALL     `??osal_mem_free::?relay`; Banked call to: osal_mem_free
+    431                }
+    432              }
+   \                     ??osalTimerUpdate_8:
+   \   000106   E5..         MOV       A,?V0
+   \   000108   45..         ORL       A,?V1
+   \   00010A   6003         JZ        $+5
+   \   00010C   02....       LJMP      ??osalTimerUpdate_1 & 0xFFFF
+    433            }
+    434          }
+   \                     ??osalTimerUpdate_0:
+   \   00010F   02....       LJMP      ?Subroutine1 & 0xFFFF
+   \   000112                REQUIRE _A_IEN0
+    435          
+    436          #ifdef POWER_SAVING
+    437          /*********************************************************************
+    438           * @fn      osal_adjust_timers
+    439           *
+    440           * @brief   Update the timer structures for elapsed ticks.
+    441           *
+    442           * @param   none
+    443           *
+    444           * @return  none
+    445           *********************************************************************/
+    446          void osal_adjust_timers( void )
+    447          {
+    448            uint16 eTime;
+    449          
+    450            if ( timerHead != NULL )
+    451            {
+    452              // Compute elapsed time (msec)
+    453              eTime = TimerElapsed() /  TICK_COUNT;
+    454          
+    455              if ( eTime )
+    456                osalTimerUpdate( eTime );
+    457            }
+    458          }
+    459          
+    460          /*********************************************************************
+    461           * @fn      osal_next_timeout
+    462           *
+    463           * @brief
+    464           *
+    465           *   Search timer table to return the lowest timeout value. If the
+    466           *   timer list is empty, then the returned timeout will be zero.
+    467           *
+    468           * @param   none
+    469           *
+    470           * @return  none
+    471           *********************************************************************/
+    472          uint16 osal_next_timeout( void )
+    473          {
+    474            uint16 nextTimeout;
+    475            osalTimerRec_t *srchTimer;
+    476          
+    477            if ( timerHead != NULL )
+    478            {
+    479              // Head of the timer list
+    480              srchTimer = timerHead;
+    481              nextTimeout = OSAL_TIMERS_MAX_TIMEOUT;
+    482          
+    483              // Look for the next timeout timer
+    484              while ( srchTimer != NULL )
+    485              {
+    486                if (srchTimer->timeout < nextTimeout)
+    487                {
+    488                  nextTimeout = srchTimer->timeout;
+    489                }
+    490                // Check next timer
+    491                srchTimer = srchTimer->next;
+    492              }
+    493            }
+    494            else
+    495            {
+    496              // No timers
+    497              nextTimeout = 0;
+    498            }
+    499          
+    500            return ( nextTimeout );
+    501          }
+    502          #endif // POWER_SAVING
+    503          
+    504          /*********************************************************************
+    505           * @fn      osal_GetSystemClock()
+    506           *
+    507           * @brief   Read the local system clock.
+    508           *
+    509           * @param   none
+    510           *
+    511           * @return  local clock in milliseconds
+    512           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    513          uint32 osal_GetSystemClock( void )
+   \                     osal_GetSystemClock:
+    514          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    515            return ( osal_systemClock );
+   \   000004   90....       MOV       DPTR,#osal_systemClock
+   \   000007   12....       LCALL     ?XLOAD_R2345
+   \   00000A   02....       LJMP      ?Subroutine0 & 0xFFFF
+    516          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??osalTimerInit::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    osalTimerInit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??osalAddTimer::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    osalAddTimer
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??osalFindTimer::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    osalFindTimer
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??osalDeleteTimer::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    osalDeleteTimer
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??osal_start_timerEx::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    osal_start_timerEx
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??osal_stop_timerEx::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    osal_stop_timerEx
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??osal_get_timeoutEx::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    osal_get_timeoutEx
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??osal_timer_num_active::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    osal_timer_num_active
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??osalTimerUpdate::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    osalTimerUpdate
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??osal_GetSystemClock::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    osal_GetSystemClock
+    517          
+    518          /*********************************************************************
+    519          *********************************************************************/
+
+   Maximum stack usage in bytes:
+
+   ISTACK XSTACK Function
+   ------ ------ --------
+      1     24   osalAddTimer
+        0     14   -> osalFindTimer
+        0     14   -> osal_mem_alloc
+      2     12   osalDeleteTimer
+      2     14   osalFindTimer
+      2      0   osalTimerInit
+      0     14   osalTimerUpdate
+        0     14   -> osal_mem_free
+        0     14   -> osal_set_event
+      2      0   osal_GetSystemClock
+      0     12   osal_get_timeoutEx
+        0     12   -> osalFindTimer
+      0     10   osal_start_timerEx
+        0     10   -> osalAddTimer
+      0     12   osal_stop_timerEx
+        0     12   -> osalDeleteTimer
+        0     12   -> osalFindTimer
+      2      0   osal_timer_num_active
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       8  ??Subroutine4_0
+       7  ?Subroutine0
+       5  ?Subroutine1
+       5  ?Subroutine2
+       3  ?Subroutine3
+       1  _A_IEN0
+     134  osalAddTimer
+       6  osalAddTimer::?relay
+      20  osalDeleteTimer
+       6  osalDeleteTimer::?relay
+      59  osalFindTimer
+       6  osalFindTimer::?relay
+      18  osalTimerInit
+       6  osalTimerInit::?relay
+     274  osalTimerUpdate
+       6  osalTimerUpdate::?relay
+      13  osal_GetSystemClock
+       6  osal_GetSystemClock::?relay
+      49  osal_get_timeoutEx
+       6  osal_get_timeoutEx::?relay
+      36  osal_start_timerEx
+       6  osal_start_timerEx::?relay
+      46  osal_stop_timerEx
+       6  osal_stop_timerEx::?relay
+       4  osal_systemClock
+      41  osal_timer_num_active
+       6  osal_timer_num_active::?relay
+       2  timerHead
+
+ 
+ 718 bytes in segment BANKED_CODE
+  60 bytes in segment BANK_RELAYS
+   1 byte  in segment SFR_AN
+   6 bytes in segment XDATA_Z
+ 
+  60 bytes of CODE     memory
+   0 bytes of DATA     memory (+ 1 byte shared)
+ 718 bytes of HUGECODE memory
+   6 bytes of XDATA    memory
+
+Errors: none
+Warnings: none

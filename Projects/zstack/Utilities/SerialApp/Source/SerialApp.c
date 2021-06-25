@@ -217,7 +217,7 @@ UINT16 SerialApp_ProcessEvent( uint8 task_id, UINT16 events )
             || (SampleApp_NwkState == DEV_END_DEVICE) )
         {
             // Start sending the periodic message in a regular interval.
-            HalLedSet(HAL_LED_1, HAL_LED_MODE_ON);
+            //HalLedSet(HAL_LED_1, HAL_LED_MODE_ON);
             
             if(SampleApp_NwkState != DEV_ZB_COORD)
               SerialApp_DeviceConnect();              
@@ -230,9 +230,9 @@ UINT16 SerialApp_ProcessEvent( uint8 task_id, UINT16 events )
       case KEY_CHANGE:
         {
           keyChange_t *keyChangeMsg = (keyChange_t *)MSGpkt;
-          uint8 txbuf[20] = {0};
-          sprintf(txbuf, "hello world, %d\n", keyChangeMsg->keys);
-          HalUARTWrite(SERIAL_APP_PORT, txbuf, strlen(txbuf));
+//          uint8 txbuf[20] = {0};
+//          sprintf(txbuf, "hello world, %d\n", keyChangeMsg->keys);
+//          HalUARTWrite(SERIAL_APP_PORT, txbuf, strlen(txbuf));
           key = keyChangeMsg->keys;
           keyInvoke_Send(keyChangeMsg->keys);
         }
@@ -469,7 +469,7 @@ void  SerialApp_DeviceConnect()
   uint16 parentNwkAddr;
   char buff[30] = {0};
   
-  HalLedBlink( HAL_LED_2, 3, 50, (1000 / 4) );
+  //HalLedBlink( HAL_LED_2, 3, 50, (1000 / 4) );
   
   nwkAddr = NLME_GetShortAddr();
   parentNwkAddr = NLME_GetCoordShortAddr();
@@ -509,8 +509,10 @@ void SerialApp_DeviceConnectRsp(uint8 *buf)
   SerialApp_TxAddr.endPoint = SERIALAPP_ENDPOINT;
   SerialApp_TxAddr.addr.shortAddr = BUILD_UINT16(buf[1], buf[0]);
   
-  HalLedSet(HAL_LED_2, HAL_LED_MODE_ON);
+  //HalLedSet(HAL_LED_2, HAL_LED_MODE_OFF);
+  //HalLedSet(HAL_LED_2, HAL_LED_MODE_ON);
   HalUARTWrite ( 0, "< connect success>\n", 23);
+  HalLedBlink (HAL_LED_6, 0, 2, 2000);
 #endif
 }
 
@@ -544,8 +546,9 @@ void SerialApp_ConnectReqProcess(uint8 *buf)
     // Error occurred in request to send.
   }
   
-  HalLedSet(HAL_LED_2, HAL_LED_MODE_ON);
+  //HalLedSet(HAL_LED_2, HAL_LED_MODE_ON);
   HalUARTWrite ( 0, "< connect success>\n", 23);
+  //HalLedSet (HAL_LED_ALL, HAL_LED_MODE_ON);
 }
 
 
@@ -602,7 +605,10 @@ static uint8 sendToPc(uint32 addr, uint8 key){
     txbuf[7] = 'D';
   }else if(key == HAL_KEY_SW_5){
     txbuf[7] = 'E';
+  }else{
+    return 1;
   }
+
   //txbuf[7] = key;
   HalUARTWrite ( 0, txbuf, 8);
   return 1;

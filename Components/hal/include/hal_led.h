@@ -63,7 +63,9 @@ extern "C"
 #define HAL_LED_2     0x02
 #define HAL_LED_3     0x04
 #define HAL_LED_4     0x08
-#define HAL_LED_ALL   (HAL_LED_1 | HAL_LED_2 | HAL_LED_3 | HAL_LED_4)
+#define HAL_LED_5     0x10
+#define HAL_LED_6     0x20
+#define HAL_LED_ALL   (HAL_LED_1 | HAL_LED_2 | HAL_LED_3 | HAL_LED_4 | HAL_LED_5 | HAL_LED_6)
 
 /* Modes */
 #define HAL_LED_MODE_OFF     0x00
